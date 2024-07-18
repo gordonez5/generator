@@ -1,0 +1,15 @@
+{
+  "name": "pretentious-menu",
+  "version": "1.0.0",
+  "description": "Generates a randomised menu item description, as might be seen in a pretentious restaurant.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4"
+  }
+}

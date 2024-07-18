@@ -1,0 +1,136 @@
+.btn {
+  // background-color: cornflowerblue;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-color: $white;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5rem;
+  color: $white;
+  color: #000000;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 1.5rem auto 0;
+  padding: 0.75rem 1rem;
+  // text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+
+  @include mq('from-md') {
+    font-size: 1.25rem;
+  }
+
+  &:hover {
+    // background-color: slateblue;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: $white;
+    text-shadow: none;
+  }
+}
+
+button {
+  // Removes browser styling
+  appearance: none;
+  border: 2px solid transparent;
+  font-size: 1.25rem;
+  
+  // Units scale with font-size
+  border-radius: 2em;
+  
+  background-color: $border-color;
+  box-shadow: 8px 10px 10px -3px rgba(0,0,0,0.4);
+  color: $card-bg;
+  
+  display: inline-flex;
+  align-items: center;
+  margin: 1.5rem auto 0;
+  padding: 0.75em 1em;
+  position: relative;
+  
+  cursor: pointer;
+
+  &:hover {
+    // background-color: $card-bg;
+    border: 2px solid $card-bg;
+    box-shadow: 8px 10px 10px -3px rgba(0,0,0,0.4);
+    color: $card-bg;
+  }
+  
+  .spinner {
+    --size: 1.25em;
+    --offset-r: calc(var(--size) * -1);
+    --offset-l: 0;
+    --opacity: 0;
+    
+    // position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  
+    display: inline-flex;
+    
+    height: var(--size);
+    width: var(--size);
+    
+    margin-top: calc(var(--size) * -0.5);
+    margin-right: var(--offset-r);
+    margin-bottom: calc(var(--size) * -0.5);
+    margin-left: var(--offset-l);
+    
+    box-sizing: border-box;
+    border: 0.125em solid rgba(white, 0.333);
+    border-top-color: white;
+    
+    border-radius: 50%;
+    opacity: var(--opacity);
+    
+    transition: 0.25s;
+    transform: translate(-50%);
+  }
+
+  .text {
+    font-family: $font-family;
+    font-size: 1rem;
+    opacity: 1;
+
+    @include mq('from-md') {
+      font-size: 1.25rem;
+    }
+
+    &::before,
+    &::after {
+      font-family: serif;
+      font-size: 1.325em;
+    }
+
+    &::before {
+      content: $lquo;
+      margin-right: 0.25rem;
+    }
+    
+    &::after {
+      content: $rquo;
+      margin-left: 0.25rem;
+    }
+  }
+
+  &.loading {
+    .text {
+      opacity: 0;
+    }
+
+    .spinner {
+      --width: 1em;
+      --offset-r: 0.333em;
+      --offset-l: -0.333em;
+      --opacity: 1;
+      
+      // animation: 0.666s load infinite;
+      animation: 0.5s load linear infinite;
+      
+      @keyframes load {
+        100% {
+          transform: translate(-50%) rotate(360deg);
+        }
+      }
+    }
+  }
+}  

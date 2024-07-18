@@ -1,0 +1,118 @@
+@mixin mq($breakpoint) {
+
+  $mq-xs: '(max-width: 35.5em)'; // 0 -> 568px (with base of 16px)
+  $mq-sm: '(max-width: 47.5em)'; // 0 -> 767px (with base of 16px)
+  $mq-from-vsmall: '(min-width: 28.5em)'; // 456px -> ... (with base of 16px)
+  $mq-from-sm: '(min-width: 35.5em)'; // 568px -> ... (with base of 16px)
+  $mq-from-md: '(min-width: 48.25em)'; // 772px -> ... (with base of 16px)
+  $mq-from-lg: '(min-width: 60em)'; // 960px -> ... (with base of 16px)
+  $mq-from-v-lg: '(min-width: 75em)'; // 1200px -> ... (with base of 16px)
+
+  $mq-vsmall-sm: '(min-width: 28.5em) and (max-width: 47.5em)'; // 456px -> 768px (with base of 16px)
+  $mq-xs-sm: '(min-width: 35.5em) and (max-width: 47.5em)'; // 568px -> 768 (with base of 16px)
+  $mq-sm-md: '(min-width: 35.5em) and (max-width: 56.25em)'; // 568px -> 900 (with base of 16px)
+
+  $mq-sm-only: '(min-width: 48em) and (max-width: 61.5em)'; // 768px -> 991px (with base of 16px)
+  $mq-md-only: '(min-width: 62em) and (max-width: 74.5em)'; // 992px -> 1199px (with base of 16px)
+
+
+  @if $breakpoint == xs {
+    @media #{$mq-xs} {
+      @content;
+    }
+  }
+
+  @if $breakpoint == sm {
+    @media #{$mq-sm} {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == xs-sm {
+    @media #{$mq-xs-sm} {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == sm-md {
+    @media #{$mq-sm-md} {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == vsm-sm {
+    @media #{$mq-vsmall-sm} {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == from-vsm {
+    @media #{$mq-from-vsmall} {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == from-sm {
+    @media #{$mq-from-sm} {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == from-md {
+    @media #{$mq-from-md} {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == from-lg {
+    @media #{$mq-from-lg} {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == from-v-lg {
+    @media #{$mq-from-v-lg} {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == sm {
+    @media #{$mq-sm-only} {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == md {
+    @media #{$mq-md-only} {
+      @content;
+    }
+  }
+}
+
+@mixin mq-min( $bp ) {
+
+  $tablet_min-width_px: 569;
+  $tablet_min-width_em: ( $tablet_min-width_px / 16 );
+
+  $desktop_min-width_px: 769;
+  $desktop_min-width_em: ( $desktop_min-width_px / 16 );
+
+  @if $bp == tablet {
+    @media ( min-width: #{ $tablet_min-width_em }em ) {
+      @content;
+    }
+  }
+
+  @else if $bp == desktop {
+    @media ( min-width: #{ $desktop_min-width_em }em ) {
+      @content;
+    }
+  }
+
+  @else {
+    @media ( min-width: #{ $bp } ) {
+      @content;
+    }
+  }
+
+}

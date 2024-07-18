@@ -1,9 +1,10 @@
 {
   "name": "football-results",
   "version": "1.0.0",
-  "description": "",
-  "main": "index-basic.js",
+  "description": "Generates a full set of simulated Premier League match scores.",
+  "main": "index-modules.js",
   "scripts": {
+    "start": "node index-modules.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
