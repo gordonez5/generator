@@ -49,27 +49,3 @@ for (let i = 0; i < split[0].length; i++) {
 console.log();
 console.log(sep);
 console.log();
-
-// const result = weightedRandom(scores, weightings);
-// console.log('result: ', result);
-
-// const percentToDecimal = (percentStr) => {
-//   return parseFloat(percentStr) / 100;  
-// };
-
-// const c = document.querySelector('.contenthalf2 .wdwtablestth');
-// const rows = c.querySelectorAll('.wttr2');
-// let arr = [];
-// rows.forEach(function(r){
-//   let items = r.querySelectorAll('.wttd');
-//   arr.push(
-//     {
-//       scoreline: items[0].textContent,
-//       games: parseInt(items[1].textContent),
-//       percentage: parseFloat(items[2].textContent)
-//     }
-//   );
-// });
-// console.table(arr);
-// console.dir(arr);
-// console.log(rows);

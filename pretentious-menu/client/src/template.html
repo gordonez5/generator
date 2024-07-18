@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="google" value="notranslate">
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+
+  <body>
+
+    <div id="bgImg" class="page-background"></div>
+
+    <div id="root" class="page">
+
+      <h1 id="restaurantName" class="restaurant-name">
+        <span translate="no"></span>
+      </h1>
+
+      <span id="nameLoader" data-loader-content="restaurantName" data-loader-variant="light" class="loader hidden"></span>
+  
+      <div class="menu-container" id="menuContainer">
+  
+        <div class="menu-card">
+          <div class="menu-card-inner">
+
+            <div class="menu-card-content">
+
+              <h2 translate="no">Entrée</h2>
+  
+              <hr class="hr-text" data-content="✦ ✦ ✦">
+              
+              <p class="menu-text" id="menuText"></p>
+
+              <span id="textLoader" data-loader-content="menuText" data-loader-variant="dark" class="loader hidden"></span>
+              
+              <hr class="hr-text" data-content="✦ ✦ ✦">
+  
+              <footer>
+                <span class="footnote" id="menuFootnote"></span>
+              </footer>
+
+            </div>
+
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </body>
+</html>

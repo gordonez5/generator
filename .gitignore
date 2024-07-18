@@ -1,1 +1,10 @@
 **/node_modules
+
+.env
+*.xlsx
+
+index.html
+pretentious-menu/modules/menu.js
+
+pretentious-menu/client/src/fonts/**/*
+!pretentious-menu/client/src/fonts/*[.ttf, .woff, .woff2]

@@ -8,14 +8,15 @@
   ```
 ### 3. Run script
 #### Basic 
-Runs the script from a single JavaScript file.
 ```
 node index-basic.js
 ```
+Runs the script from a single JavaScript file.
 #### Advanced
-Uses module imports to split the code into manageable chunks.
 ```
 node index-modules.js
 ```
+Uses module imports to split the code into manageable chunks.
+
 ---
 
